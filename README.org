@@ -1,0 +1,51 @@
+* Linear Algebra Program in c++ (LAPiCpp)
+Made to improve my c++ skills (-std=c++17 && gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)). The program will be defined for a
+sequential use. I will search for usefull functions and variables to put in,
+in terms of Object manipulations, optimal memory access and fast Object operations.
+** GOALS:
+  - Define a Class for Objects:
+    + Dense Matrices as =DENSEMAT=
+    + Dense Vectors as =DENSEVEC=
+    + Under the namespace =DENSEOBJ=
+  - Use Template or better
+    + Basic Types :: int, double, complex<int>, complex<double>
+    + strong types :: [[https://www.youtube.com/watch?v=fWcnp7Bulc8&t=2380s][Strong Types in c++ - B.Dellar, c++ on Sea 2019]] 	      
+  - Made a diagram/blueprint for:
+    + repertories and files
+    + Class and functions
+    + Clear dependancies
+    + Makefile view
+    + Objects
+  - Benchmark perf:
+    + comparison with EIGEN, BLASPP, LAPACKPP...
+  - Define Unittests
+    + Using valgrind and other debugging tools and options
+  - Compile it as a lib
+
+** About Objects
+This section defines what the program calls a matrix or a vector.
+And how those objects are build.
+*** The Matrix Class:
+we call Matrix the union of a 2D object (=_values=) and two integers (=_nr= and =_nc=). Those integers are used to
+store the size of =_values= in both dimensions. =_values= as a Pointer to Pointer is used to store $_nr\times_nc$ elements in
+a row-major format. So =_nr= is for number of rows and =_nc= means number of cols. 
+** Need to rewatch
+- [[https://www.youtube.com/watch?v=RzO7s-RbLwk][A linear algebra library for C++23 - Guy Davidson, C++ on Sea 2019]]
+- [[https://www.youtube.com/watch?v=fWcnp7Bulc8&t=2380s][Strong Types in c++ - B.Dellar, c++ on Sea 2019]]
+
+** TODO [#0] push the project on github or gitlab
+if gitlablab, try to use gnu guix as runner.
+** TODO [#A] make blueprint:
+- for class, repo
+** TODO [#B] clean up unittests
+- remove the i j element outputs
+- fix kcachegrind callgrind.out.2040 error:
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+qt.qpa.screen: QXcbConnection: Could not connect to display
+Could not connect to any X display.
+** TODO [#C] Define usefull functions in class
+like FillDENSEMAT using pointer to a function or {{a11,a12},{a21,a22}} or copy/deepcopy
+or read from a file.
+** TODO [#D] Bench Constructor and functions
+Compare it to EIGEN and store results in a file and print using R, ggplot.
+
